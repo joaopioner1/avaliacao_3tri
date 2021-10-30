@@ -26,7 +26,7 @@ public final class Carro extends Veiculo {
             case "Sedan" :
                 return "Carro para solteiros casados.";
             default :
-                return "Tipo n'ao classificado no programa.";
+                return "Tipo nao classificado no programa.";
         }
     }
 }
