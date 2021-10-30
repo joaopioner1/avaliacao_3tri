@@ -6,14 +6,14 @@ public class Veiculo {
     private String cor;
     private final String placa;
     private final String marca;
+    private boolean abastecido;
 
     //Construtor
     public Veiculo(String cor, String placa, String marca) {
-        //if (marca.equals("Mercedes") || marca.equals("Ford")
-          //      || marca.equals("Fiat")) {
         this.marca = marca;
         this.cor = cor;
         this.placa = placa;
+        this.abastecido = false;
     }
 
     //Getters
@@ -29,8 +29,20 @@ public class Veiculo {
         return this.placa;
     }
 
+    public boolean isAbastecido() {
+        return this.abastecido;
+    }
     //Metodinhos
-    
 
+    public void abastecer() {
+        if (!this.abastecido) {
+            this.abastecido = true;
+        }
+    }
 
+    public boolean andarComVeiculo() {
+        if (this.abastecido)
+            return true;
+        else return false;
+    }
 }
