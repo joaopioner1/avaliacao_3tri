@@ -50,9 +50,23 @@ public class Cliente {
         return nome;
     }
 
+    public String getCPF() {
+        return CPF;
+    }
+
+    public boolean isPossuiHabilitacao() {
+        return possuiHabilitacao;
+    }
+
     //Metodinhos
+    public void tiraCarteira() {
+        int age = dataNascimento.getYear() - LocalDate.now().getYear();
+        if (this.possuiHabilitacao == false && age >= 18)
+            this.possuiHabilitacao = true;
+    }
+
     public void aluga(Carro car) {
-        if (this.) {
+        if (car.isAlugado()==false && this.possuiHabilitacao) {
 
         }
     }

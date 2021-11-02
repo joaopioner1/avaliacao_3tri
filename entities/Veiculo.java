@@ -7,6 +7,7 @@ public class Veiculo {
     private final String placa;
     private final String marca;
     private boolean abastecido;
+    private boolean alugado;
 
     //Construtor
     public Veiculo(String cor, String placa, String marca) {
@@ -14,6 +15,7 @@ public class Veiculo {
         this.cor = cor;
         this.placa = placa;
         this.abastecido = false;
+        this.alugado = false;
     }
 
     //Getters
@@ -31,6 +33,10 @@ public class Veiculo {
 
     public boolean isAbastecido() {
         return this.abastecido;
+    }
+
+    public boolean isAlugado() {
+        return this.alugado;
     }
     //Metodinhos
 
