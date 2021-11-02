@@ -38,6 +38,10 @@ public class Veiculo {
     public boolean isAlugado() {
         return this.alugado;
     }
+
+    public void setAlugado(boolean alug) {
+        this.alugado = alug;
+    }
     //Metodinhos
 
     public void abastecer() {

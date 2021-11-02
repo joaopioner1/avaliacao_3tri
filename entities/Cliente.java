@@ -64,14 +64,4 @@ public class Cliente {
         if (this.possuiHabilitacao == false && age >= 18)
             this.possuiHabilitacao = true;
     }
-
-    public void aluga(Carro car) {
-        if (car.isAlugado()==false && this.possuiHabilitacao) {
-
-        }
-    }
-
-    public void aluga(Motocicleta mot) {
-
-    }
 }
