@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Cliente {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
@@ -12,12 +13,15 @@ public class Cliente {
     private String endereco;
     private String email;
 
+    private ArrayList<Veiculo> listVeiculos;
+
     //Construtores
     public Cliente(String nome, LocalDate dataNascimento, String CPF) {
         this.dataNascimento = dataNascimento;
         this.CPF = CPF;
         this.nome = nome;
         this.possuiHabilitacao = false;
+        listVeiculos = new ArrayList<>();
     }
 
     public Cliente(String nome, LocalDate dataNascimento, String CPF,
@@ -63,5 +67,21 @@ public class Cliente {
         int age = dataNascimento.getYear() - LocalDate.now().getYear();
         if (this.possuiHabilitacao == false && age >= 18)
             this.possuiHabilitacao = true;
+    }
+
+    public void addVeiculo(Veiculo vec) {
+        listVeiculos.add(vec);
+    }
+
+    public void addVeiculo(Veiculo vec, int pos) {
+        listVeiculos.add(pos, vec);
+    }
+
+    public int tamanhoLista() {
+        return listVeiculos.size();
+    }
+
+    public ArrayList<Veiculo> getList() {
+        return listVeiculos;
     }
 }

@@ -17,6 +17,7 @@ public class Aluguel {
         this.dataRetirado = retirada;
         this.dataDevolvido = dataDevolvido;
     }
+
     //Getters
     public LocalDate getDataRetirado() {
         return this.dataRetirado;
@@ -40,9 +41,12 @@ public class Aluguel {
     }
 
     public void aluga(Carro car, Cliente cli) {
+        Registro registro = new Registro();
         if (car.isAlugado()==false && cli.isPossuiHabilitacao()) {
             car.setAlugado(true);
-            ca
+            cli.addVeiculo(car);
+            registro.addCliente(cli);
+            
         }
     }
 
