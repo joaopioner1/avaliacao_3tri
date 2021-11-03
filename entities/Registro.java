@@ -14,4 +14,20 @@ public class Registro {
     public void addCliente(int pos, Cliente c) {
         this.listaClientes.add(pos, c);
     }
+
+    public void removeCliente(Cliente c) {
+        this.listaClientes.remove(c);
+    }
+
+    public void removeCliente(int pos) {
+        this.listaClientes.remove(pos);
+    }
+
+    public int getTotalClientes() {
+        return this.listaClientes.size();
+    }
+
+    public ArrayList<Cliente> getListaClientes() {
+        return this.listaClientes;
+    }
 }

@@ -77,7 +77,11 @@ public class Cliente {
         listVeiculos.add(pos, vec);
     }
 
-    public int tamanhoLista() {
+    public void removeVeiculo(Veiculo vec) {
+        this.listVeiculos.remove(vec);
+    }
+
+    public int sizeListaVecAlugados() {
         return listVeiculos.size();
     }
 

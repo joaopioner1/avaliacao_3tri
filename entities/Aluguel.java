@@ -6,6 +6,8 @@ import java.time.LocalDate;
 public class Aluguel {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
+    private static Registro registro = new Registro();
+
     private static double valorHoraCarro = 20;
     private static double valorHoraMoto = 10;
 
@@ -40,17 +42,23 @@ public class Aluguel {
         return duracao.toHours() * valorHoraMoto;
     }
 
-    public void aluga(Carro car, Cliente cli) {
-        Registro registro = new Registro();
+    public boolean aluga(Carro car, Cliente cli) {
         if (car.isAlugado()==false && cli.isPossuiHabilitacao()) {
             car.setAlugado(true);
             cli.addVeiculo(car);
             registro.addCliente(cli);
-            
+            return true;
         }
+        else return false;
     }
 
-    public void aluga(Motocicleta mot) {
-
+    public boolean aluga(Motocicleta mot, Cliente cli) {
+        if (mot.isAlugado()==false && cli.isPossuiHabilitacao()) {
+            mot.setAlugado(true);
+            cli.addVeiculo(mot);
+            registro.addCliente(cli);
+            return true;
+        }
+        else return false;
     }
 }
