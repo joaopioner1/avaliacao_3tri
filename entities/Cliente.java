@@ -81,6 +81,10 @@ public class Cliente {
         this.listVeiculos.remove(vec);
     }
 
+    public void removeVeiculo(int pos) {
+        this.listVeiculos.remove(pos);
+    }
+
     public int sizeListaVecAlugados() {
         return listVeiculos.size();
     }
