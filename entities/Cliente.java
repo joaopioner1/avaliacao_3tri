@@ -1,11 +1,14 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Cliente {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private final String nome;
     private final LocalDate dataNascimento;
     private final String CPF;
@@ -63,10 +66,11 @@ public class Cliente {
     }
 
     //Metodinhos
-    public void tiraCarteira() {
-        int age = dataNascimento.getYear() - LocalDate.now().getYear();
+    public boolean tiraCarteira() {
+        int age = LocalDate.now().getYear() - dataNascimento.getYear();
         if (this.possuiHabilitacao == false && age >= 18)
-            this.possuiHabilitacao = true;
+            return this.possuiHabilitacao = true;
+        else return false;
     }
 
     public void addVeiculo(Veiculo vec) {
@@ -91,5 +95,17 @@ public class Cliente {
 
     public ArrayList<Veiculo> getList() {
         return listVeiculos;
+    }
+
+    @Override
+    public String toString() {
+        String date = this.dataNascimento.format(formatter);
+        return "---CLiente info---"
+                + "\nNome: " + nome
+                + "\nData de nascimento: " + date
+                + "\nEndereco: " + endereco
+                + "\nEmail: " + email
+                + "\nCPF: " + CPF
+                + "\nPossui habilitacao: " + possuiHabilitacao + "\n------------";
     }
 }
