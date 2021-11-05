@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public class Motocicleta extends Veiculo {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
@@ -8,8 +10,8 @@ public class Motocicleta extends Veiculo {
 
     //Construtor
     public Motocicleta(String marca, String cor, int cilindrada,
-    String placa) {
-        super(cor, placa, marca);
+    String placa, LocalDate retirada, LocalDate dataDevolvido) {
+        super(cor, placa, marca, retirada, dataDevolvido);
         this.cilindrada = cilindrada;
         this.temGarupa = false;
     }

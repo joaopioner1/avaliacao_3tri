@@ -1,13 +1,15 @@
 package entities;
 
+import java.time.LocalDate;
+
 public final class Carro extends Veiculo {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
     private final String tipo;
 
     //Construtor
-    public Carro(String tipo, String marca, String placa, String cor) {
-        super(cor, placa, marca);
+    public Carro(String tipo, String marca, String placa, String cor, LocalDate retirada, LocalDate dataDevolvido) {
+        super(cor, placa, marca, retirada, dataDevolvido);
         this.tipo = tipo;
     }
 

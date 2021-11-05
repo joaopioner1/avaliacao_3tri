@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public class Veiculo {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
@@ -9,13 +11,18 @@ public class Veiculo {
     private boolean abastecido;
     private boolean alugado;
 
+    private final LocalDate dataRetirado; //Data que o usuario aluga
+    private final LocalDate dataDevolvido;
+
     //Construtor
-    public Veiculo(String cor, String placa, String marca) {
+    public Veiculo(String cor, String placa, String marca, LocalDate retirada, LocalDate dataDevolvido) {
         this.marca = marca;
         this.cor = cor;
         this.placa = placa;
         this.abastecido = false;
         this.alugado = false;
+        this.dataRetirado = retirada;
+        this.dataDevolvido = dataDevolvido;
     }
 
     //Getters
@@ -42,6 +49,15 @@ public class Veiculo {
     protected void setAlugado(boolean alug) {
         this.alugado = alug;
     }
+
+    public LocalDate getDataRetirado() {
+        return this.dataRetirado;
+    }
+
+    public LocalDate getDataDevolvido() {
+        return this.dataDevolvido;
+    }
+
     //Metodinhos
 
     public boolean abastecer() {

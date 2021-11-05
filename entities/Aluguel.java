@@ -9,33 +9,19 @@ public class Aluguel {
     private static double valorHoraCarro = 20;
     private static double valorHoraMoto = 10;
 
-    private final LocalDate dataRetirado; //Data que o usuario aluga
-    private final LocalDate dataDevolvido;
-
     //Construtor
-    public Aluguel(LocalDate retirada, LocalDate dataDevolvido) {
-        this.dataRetirado = retirada;
-        this.dataDevolvido = dataDevolvido;
-    }
-
-    //Getters
-    public LocalDate getDataRetirado() {
-        return this.dataRetirado;
-    }
-
-    public LocalDate getDataDevolvido() {
-        return this.dataDevolvido;
+    public Aluguel() {
     }
 
     //Metodinhos
-    public double calcAluguelCar() {
-        int periodo = dataDevolvido.getDayOfYear() - dataRetirado.getDayOfYear() ;
+    public double calcAluguelCar(Carro c) {
+        int periodo = c.getDataDevolvido().getDayOfYear() - c.getDataRetirado().getDayOfYear();
         Duration duracao = Duration.ofDays(periodo);
         return duracao.toHours() * valorHoraCarro;
     }
 
-    public double calcAluguelMoto() {
-        int periodo = dataDevolvido.getDayOfYear() - dataRetirado.getDayOfYear();
+    public double calcAluguelMoto(Motocicleta m) {
+        int periodo = m.getDataDevolvido().getDayOfYear() - m.getDataRetirado().getDayOfYear();
         Duration duracao = Duration.ofDays(periodo);
         return duracao.toHours() * valorHoraMoto;
     }
