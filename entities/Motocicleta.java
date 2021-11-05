@@ -29,4 +29,9 @@ public class Motocicleta extends Veiculo {
             this.temGarupa = true;
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nTem garupa: " + temGarupa + "\nCilindrada: " + cilindrada + "\n===========";
+    }
 }

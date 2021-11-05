@@ -17,16 +17,21 @@ public final class Carro extends Veiculo {
     }
 
     //Metodinhos
-    public String mostraAptidao(Carro c) {
-        switch(c.getTipo()) {
+    public String mostraAptidao() {
+        switch(getTipo()) {
             case "SUV" :
                 return "Carro para familia.";
             case "Caminhonete":
                 return "Carro para trabalho.";
             case "Sedan" :
-                return "Carro para solteiros casados.";
+                return "Carro para solteiros frustados.";
             default :
                 return "Tipo nao classificado no programa.";
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nTipo: " + tipo + "\n===========";
     }
 }

@@ -3,7 +3,7 @@ package entities;
 public class Veiculo {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
-    private String cor;
+    private final String cor;
     private final String placa;
     private final String marca;
     private boolean abastecido;
@@ -54,5 +54,15 @@ public class Veiculo {
         if (this.abastecido)
             return true;
         else return false;
+    }
+
+    @Override
+    public String toString() {
+        return "\n=== Veiculo Info ==="
+                + "\nCor: " + cor
+                + "\nPlaca: " + placa
+                + "\nMarca: " + marca
+                + "\nEstá abastecido: " + abastecido
+                + "\nEstá alugado: " + alugado;
     }
 }
