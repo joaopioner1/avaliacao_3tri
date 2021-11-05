@@ -7,6 +7,10 @@ public class Registro {
 
     private ArrayList<Cliente> listaClientes;
 
+    public Registro() {
+        listaClientes = new ArrayList<>();
+    }
+
     public void addCliente(Cliente c) {
         this.listaClientes.add(c);
     }

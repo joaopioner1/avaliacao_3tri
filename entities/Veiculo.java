@@ -39,15 +39,15 @@ public class Veiculo {
         return this.alugado;
     }
 
-    public void setAlugado(boolean alug) {
+    protected void setAlugado(boolean alug) {
         this.alugado = alug;
     }
     //Metodinhos
 
-    public void abastecer() {
+    public boolean abastecer() {
         if (!this.abastecido) {
-            this.abastecido = true;
-        }
+            return this.abastecido = true;
+        } return false;
     }
 
     public boolean andarComVeiculo() {

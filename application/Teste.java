@@ -1,8 +1,6 @@
 package application;
 
-import entities.Carro;
-import entities.Cliente;
-import entities.Veiculo;
+import entities.*;
 
 import java.time.LocalDate;
 
@@ -41,12 +39,32 @@ public class Teste {
 
         Carro car1 = new Carro("SUV","Toyota","12d9SD","Preto");
         System.out.println(car1.isAlugado()==false);
-        car1.setAlugado(true);
-        System.out.println(car1.isAlugado()==false);
+        System.out.println(car1.isAlugado()==true);
         System.out.println(car1.mostraAptidao());
         System.out.println(car1);
 
+        printSeparador();
 
+        Motocicleta mot1 = new Motocicleta("Honda","Vermelho",125,"12AD32");
+        System.out.println(mot1);
+        System.out.println(mot1.addGarupa()==true);
+        System.out.println(mot1.isTemGarupa());
+        System.out.println(mot1.addGarupa()==true); //Nao eh possivel add de novo, retorna falso
+        System.out.println(mot1.andarComVeiculo()==true); //Nao anda pq nao tem gasosa
+        System.out.println(mot1.abastecer()==true);
+        System.out.println(mot1.andarComVeiculo()==true); //Anda pq esta abastecido
+
+        printSeparador();
+
+        Aluguel alg1 = new Aluguel(LocalDate.of(2021, 11, 5),LocalDate.of(2021, 11, 6));
+        System.out.println(alg1.getDataRetirado());
+        System.out.println(alg1.getDataDevolvido());
+        System.out.println(alg1.aluga(car1, c2)==true); //Aluguei
+        System.out.println(car1);
+        System.out.println(alg1.aluga(car1, c2)==true); //Nao posso alugar o mesmo carro novamente
+
+        Registro resg = new Registro();
+        System.out.println(resg.getListaClientes());
     }
     static void printSeparador() {
         System.out.println("**************************************");

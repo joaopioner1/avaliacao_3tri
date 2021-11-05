@@ -4,10 +4,10 @@ public class Motocicleta extends Veiculo {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
     //Atributos
     private boolean temGarupa;
-    private final String cilindrada;
+    private final int cilindrada;
 
     //Construtor
-    public Motocicleta(String marca, String cor, String cilindrada,
+    public Motocicleta(String marca, String cor, int cilindrada,
     String placa) {
         super(cor, placa, marca);
         this.cilindrada = cilindrada;
@@ -15,7 +15,7 @@ public class Motocicleta extends Veiculo {
     }
 
     //Getters
-    public String getCilindrada() {
+    public int getCilindrada() {
         return this.cilindrada;
     }
 
@@ -24,10 +24,10 @@ public class Motocicleta extends Veiculo {
     }
 
     //Metodinhos
-    public void addGarupa() {
+    public boolean addGarupa() {
         if (!this.temGarupa) {
-            this.temGarupa = true;
-        }
+            return this.temGarupa = true;
+        } else return false;
     }
 
     @Override

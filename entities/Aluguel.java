@@ -31,13 +31,13 @@ public class Aluguel {
 
     //Metodinhos
     public double calcAluguelCar() {
-        int periodo = dataDevolvido.getDayOfYear() - dataRetirado.getDayOfYear() ;
+        int periodo = dataDevolvido.getDayOfMonth() - dataRetirado.getDayOfYear() ;
         Duration duracao = Duration.ofDays(periodo);
         return duracao.toHours() * valorHoraCarro;
     }
 
     public double calcAluguelMoto() {
-        int periodo = dataRetirado.getDayOfYear() - dataDevolvido.getDayOfYear();
+        int periodo = dataDevolvido.getDayOfYear() - dataRetirado.getDayOfYear();
         Duration duracao = Duration.ofDays(periodo);
         return duracao.toHours() * valorHoraMoto;
     }
