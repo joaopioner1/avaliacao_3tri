@@ -56,15 +56,20 @@ public class Teste {
 
         printSeparador();
 
+        Registro registro = new Registro();
+
         Aluguel alg1 = new Aluguel(LocalDate.of(2021, 11, 5),LocalDate.of(2021, 11, 6));
         System.out.println(alg1.getDataRetirado());
         System.out.println(alg1.getDataDevolvido());
-        System.out.println(alg1.aluga(car1, c2)==true); //Aluguei
+        System.out.println(alg1.aluga(car1, c2, registro)==true); //Aluguei
         System.out.println(car1);
-        System.out.println(alg1.aluga(car1, c2)==true); //Nao posso alugar o mesmo carro novamente
+        System.out.println(alg1.aluga(car1, c2, registro)==true); //Nao posso alugar o mesmo carro novamente
 
-        Registro resg = new Registro();
-        System.out.println(resg.getListaClientes());
+        System.out.println(registro.getTotalClientes());
+        System.out.println(registro.getListaClientes());
+        System.out.println(c2.getList());
+        System.out.println(alg1.calcAluguelCar());
+
     }
     static void printSeparador() {
         System.out.println("**************************************");

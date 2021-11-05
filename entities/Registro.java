@@ -5,17 +5,16 @@ import java.util.ArrayList;
 public class Registro {
     //Author: Joao Vitor Souza Pioner & Vitor Sehn
 
-    private ArrayList<Cliente> listaClientes;
+    private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public Registro() {
-        listaClientes = new ArrayList<>();
     }
 
     public void addCliente(Cliente c) {
         this.listaClientes.add(c);
     }
 
-    public void addCliente(int pos, Cliente c) {
+    protected void addCliente(int pos, Cliente c) {
         this.listaClientes.add(pos, c);
     }
 
