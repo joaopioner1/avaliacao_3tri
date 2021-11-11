@@ -82,6 +82,7 @@ public class Teste {
         alg1.aluga(mot2, c2, registro);
         System.out.println(alg1.calcAluguelMoto(mot2));
     }
+
     static void printSeparador() {
         System.out.println("**************************************");
     }
